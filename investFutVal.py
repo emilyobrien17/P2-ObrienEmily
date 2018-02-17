@@ -8,10 +8,15 @@ def main():
 
     principal = eval(input("Enter the initial principal:  "))
     apr = eval(input("Enter the annual interest rate:  "))
-    for i in range(10):
-        principal = principal * (1 + apr)
+    years = eval(input("Enter the number of years for investment:  "))
+    addPerYear = eval(input("Enter how much you want to add to your investment per year:  "))
+    period= eval(input("Enter period per year:  "))
 
-    print("The value in 10 years is:", principal)
+    for i in range(years * period):
+        principal = principal * ((1 + apr)/period)
+        principal = principal + addPerYear
+
+    print("The result after ", years, " years is:", principal)
 
 
 main()
